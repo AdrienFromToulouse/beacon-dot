@@ -15,10 +15,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.provider.Settings.Secure;
 import android.util.Log;
 import android.view.ActionMode;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.estimote.sdk.Beacon;
@@ -39,7 +37,7 @@ public class MainActivity extends Activity {
 	/*Insert here the UUID of your beacon
 	 * You can find it using applications such as iBeacon Locate (on google play)
 	 */
-	private static final String ESTIMOTE_PROXIMITY_UUID = "8492E75F-4FD6-469D-B132-043FE94921D8";
+	private static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
 	private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId",
 			ESTIMOTE_PROXIMITY_UUID, null, null);
@@ -143,7 +141,7 @@ public class MainActivity extends Activity {
 									&& flagRegion == 0){
 								
 								flagRegion++;
-								postNotification("Welcome to IBM, " + userID);
+								postNotification("Welcome to Asiance, " + userID);
 							}
 							
 						} 

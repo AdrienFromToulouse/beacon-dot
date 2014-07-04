@@ -21,7 +21,7 @@
         android:layout_weight="0.10"
         android:gravity="center"
         android:scrollHorizontally="false"
-        android:text="Access Control"
+        android:text="Asiance Beacon"
         android:textColor="@color/NiceButtonBorderColor"
         android:textSize="40sp" />
 
