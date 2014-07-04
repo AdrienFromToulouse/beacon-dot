@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android=
+   "http://schemas.android.com/apk/res/android"
+   android:id="@+id/container"
+   android:layout_width="fill_parent"
+   android:layout_height="fill_parent"
+   android:orientation="vertical">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Proximity UUID" />
+     
+   <EditText
+       android:id="@+id/txtUUID"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" />
+     
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Major" />
+     
+   <EditText
+       android:id="@+id/txtMajor"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" />
+     
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Minor" />
+     
+   <EditText
+       android:id="@+id/txtMinor"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" >
+   </EditText>
+     
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Rssi" />
+     
+   <EditText
+       android:id="@+id/txtRssi"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" >
+   </EditText>
+   
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="beacon promixity" />
+     
+   <EditText
+       android:id="@+id/txtAccuracy"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" >
+   </EditText>
+   
+    <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Distance from the beacon" />
+     
+   <EditText
+       android:id="@+id/txtProximity"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" >
+   </EditText>
+   
+   <!-- <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Information"
+       android:textAppearance=
+           "?android:attr/textAppearanceLarge" />-->
+     
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Device supports Bluetooth Low Energy." />
+     
+   <EditText
+       android:id="@+id/txtHasBluetooth"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" />
+     
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Bluetooth is enabled on the device" />
+
+  
+   <EditText
+       android:id="@+id/txtBluetoothIsOn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:ems="10"
+       android:focusable="false" />
+    
+   <!--  <Button 
+    android:id="@+id/sendButton"
+    android:layout_width="190dp"  
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:layout_gravity="center_vertical|center_horizontal"
+    android:gravity="center_vertical|center_horizontal"
+
+    android:background="@drawable/nice_button"
+
+    android:text="Send to the cloud  "
+    android:textColor="@android:color/white"
+    android:textSize="18sp"
+    android:shadowRadius="1"
+    android:shadowDx="1"
+    android:shadowDy="1"
+    android:shadowColor="@android:color/black"
+></Button>-->
+    <ListView
+        android:id="@+id/itemsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/background" >
+    </ListView> 
+     
+          
+</LinearLayout>
