@@ -2,6 +2,7 @@ package com.example.beacon_dot;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -17,6 +18,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.ActionMode;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.estimote.sdk.Beacon;
@@ -39,7 +41,7 @@ public class MainActivity extends Activity {
 	 */
 	private static final String ESTIMOTE_PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
-	private static final Region ALL_ESTIMOTE_BEACONS = new Region("regionId",
+	private static final Region ALL_ESTIMOTE_BEACONS = new Region("CreativeRoom",
 			ESTIMOTE_PROXIMITY_UUID, null, null);
 
 	protected static final String TAG = "EstimoteiBeacon";
@@ -73,6 +75,8 @@ public class MainActivity extends Activity {
 		beaconManager = new BeaconManager(this);
 		notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
+    beaconManager.setBackgroundScanPeriod(TimeUnit.SECONDS.toMillis(1), 0);
+		
 		if (!beaconManager.isBluetoothEnabled()) {
 			alertbox("Alert", "Please, activate your bluetooth");
 		}
@@ -83,7 +87,10 @@ public class MainActivity extends Activity {
 				if (isAppInForeground(getApplicationContext())) {
 					Toast.makeText(getApplicationContext(), "Entered region",
 							Toast.LENGTH_LONG).show();
-
+				
+					TextView txtAccessControl = (TextView)findViewById(R.id.txtAccessControl);
+					txtAccessControl.setText("Welcome in Asiance!");
+					
 					// ---range for beacons---
 					try {
 						beaconManager.startRanging(ALL_ESTIMOTE_BEACONS);
@@ -105,6 +112,9 @@ public class MainActivity extends Activity {
 				if (isAppInForeground(getApplicationContext())) {
 					Toast.makeText(getApplicationContext(), "Exited region",
 							Toast.LENGTH_LONG).show();
+					
+					TextView txtAccessControl = (TextView)findViewById(R.id.txtAccessControl);
+					txtAccessControl.setText("See you next time!");
 				} 
 
 				// ---stop ranging for beacons---
@@ -187,7 +197,7 @@ public class MainActivity extends Activity {
 				PendingIntent.FLAG_UPDATE_CURRENT);
 		Notification notification = new Notification.Builder(MainActivity.this)
 				.setSmallIcon(R.drawable.logo)
-				.setContentTitle("Monitoring Region").setContentText(msg)
+				.setContentTitle("Asiance monitoring region").setContentText(msg)
 				.setAutoCancel(true).setContentIntent(pendingIntent).build();
 		notification.defaults |= Notification.DEFAULT_SOUND;
 		notification.defaults |= Notification.DEFAULT_LIGHTS;

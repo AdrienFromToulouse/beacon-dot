@@ -12,7 +12,7 @@
         android:adjustViewBounds="true"
         android:background="@color/background2"
         android:scaleType="fitXY"
-        android:src="@drawable/logo" />
+        android:src="@drawable/asiance_logo_big" />
 
     <TextView
         android:id="@+id/txtAccessControl"
@@ -23,6 +23,6 @@
         android:scrollHorizontally="false"
         android:text="Asiance Beacon"
         android:textColor="@color/NiceButtonBorderColor"
-        android:textSize="40sp" />
+        android:textSize="24sp" />
 
 </LinearLayout>
