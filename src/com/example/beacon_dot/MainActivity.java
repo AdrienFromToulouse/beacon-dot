@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.util.Log;
 import android.view.ActionMode;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -89,7 +90,7 @@ public class MainActivity extends Activity {
 							Toast.LENGTH_LONG).show();
 				
 					TextView txtAccessControl = (TextView)findViewById(R.id.txtAccessControl);
-					txtAccessControl.setText("Welcome to our store " + userID +"!");
+					txtAccessControl.setText("Dear " + userID + "\r\n\r\nWelcome to our store!");
 					
 					// ---range for beacons---
 					try {
@@ -137,14 +138,10 @@ public class MainActivity extends Activity {
 					public void run() {
 						if (beacons.size() > 0) {
 							Beacon iBeacon1 = null;
-							// ---get the first
+							
 							// iBeacon---
 							iBeacon1 = beacons.get(0);
-
-					/*If it is on region, it's "IMMEDIATE" and flag is 0 
-					 * (first time it is IMMEDIATE since it entered the 
-					 * region) it sends a message to the cloud with the ID.
-					 * */		
+				
 							if(String.valueOf(Utils.
 									proximityFromAccuracy(Utils.
 											computeAccuracy(iBeacon1))) == "IMMEDIATE" 
@@ -153,7 +150,14 @@ public class MainActivity extends Activity {
 								flagRegion++;
 								postNotification(userID + ", you got 30% OFF on this polo!");
 							}
-							
+							if(String.valueOf(Utils.
+									proximityFromAccuracy(Utils.
+											computeAccuracy(iBeacon1))) == "IMMEDIATE"){
+											  
+								selectProduct( iBeacon1.getMinor() );
+								
+							}
+						
 						} 
 					}
 				});
@@ -204,6 +208,34 @@ public class MainActivity extends Activity {
 		notificationManager.notify(NOTIFICATION_ID, notification);
 	}
 
+	private void selectProduct(int Minor){
+	  
+	   switch(Minor) {
+	     
+      case 16770:
+        setProduct("polo1", "SANGHON KIM JERSEY FOR LACOSTE L!VE");
+        break;
+      case 3801:
+        setProduct("polo2", "SANGHON KIM POLO FOR LACOSTE L!VE");
+       break;
+      case 12968:
+        setProduct("polo3", "SANGHON KIM TEE-SHIRT FOR LACOSTE L!VE");
+        break;
+      default:
+        setProduct("polo1", "SANGHON KIM JERSEY FOR LACOSTE L!VE");
+    }
+  }
+	
+	private void setProduct(String productPicURL, String productName){
+		
+	  TextView txtAccessControl = (TextView)findViewById(R.id.txtAccessControl);
+	  txtAccessControl.setText(productName);
+    
+    ImageView imageView = (ImageView) findViewById(R.id.productPic);
+    imageView.setImageResource(getResources().getIdentifier(productPicURL, "drawable", getPackageName()));
+  }
+	
+		
 	// ---helper method to determine if the app is in
 	// the foreground---
 	public static boolean isAppInForeground(Context context) {
