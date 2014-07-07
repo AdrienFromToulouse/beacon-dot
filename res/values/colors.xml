@@ -2,10 +2,10 @@
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="textEditBackground">#cfe3e1</color>
-    <color name="actionBarBackground">#457EB1</color>
-    <color name="actionBarBorder">#255F95</color>
-    <color name="list_text_color">#5b5b5b</color>
-    <color name="background">#E4F3F5</color>
+    <color name="actionBarBackground">#f3f3f3</color>
+    <color name="actionBarBorder">#ffffff</color>
+    <color name="list_text_color">#ffffff</color>
+    <color name="background">#ffffff</color>
     <color name="done_button_background">#398355</color>
     <color name="divider_color">#959595</color>
     <color name="NiceButtonStartColor">#457EB1</color>
@@ -13,5 +13,5 @@
     <color name="NiceButtonDisabledStartColor">#565051</color>
     <color name="NiceButtonDisabledEndColor">#736F6E</color>
     <color name="NiceButtonBorderColor">#254117</color>
-    <color name="background2">#00008B</color>
+    <color name="background2">#ffffff</color>
 </resources>

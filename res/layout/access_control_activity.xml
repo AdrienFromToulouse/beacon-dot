@@ -6,13 +6,13 @@
     android:orientation="vertical" >
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="311dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="0.07"
         android:adjustViewBounds="true"
         android:background="@color/background2"
         android:scaleType="fitXY"
-        android:src="@drawable/asiance_logo_big" />
+        android:src="@drawable/store"/>
 
     <TextView
         android:id="@+id/txtAccessControl"

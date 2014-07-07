@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
 							Toast.LENGTH_LONG).show();
 				
 					TextView txtAccessControl = (TextView)findViewById(R.id.txtAccessControl);
-					txtAccessControl.setText("Welcome in Asiance!");
+					txtAccessControl.setText("Welcome to our store " + userID +"!");
 					
 					// ---range for beacons---
 					try {
@@ -151,7 +151,7 @@ public class MainActivity extends Activity {
 									&& flagRegion == 0){
 								
 								flagRegion++;
-								postNotification("Welcome to Asiance, " + userID);
+								postNotification(userID + ", you got 30% OFF on this polo!");
 							}
 							
 						} 
@@ -159,7 +159,6 @@ public class MainActivity extends Activity {
 				});
 			}
 		});
-
 	}
 
 	DecimalFormat df = new DecimalFormat("#.##");
@@ -195,9 +194,10 @@ public class MainActivity extends Activity {
 		PendingIntent pendingIntent = PendingIntent.getActivities(
 				MainActivity.this, 0, new Intent[] { notifyIntent },
 				PendingIntent.FLAG_UPDATE_CURRENT);
+		
 		Notification notification = new Notification.Builder(MainActivity.this)
-				.setSmallIcon(R.drawable.logo)
-				.setContentTitle("Asiance monitoring region").setContentText(msg)
+				.setSmallIcon(R.drawable.polo)
+				.setContentTitle("Lacoste Beacon App").setContentText(msg)
 				.setAutoCancel(true).setContentIntent(pendingIntent).build();
 		notification.defaults |= Notification.DEFAULT_SOUND;
 		notification.defaults |= Notification.DEFAULT_LIGHTS;

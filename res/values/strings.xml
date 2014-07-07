@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Asiance Beacon</string>
+    <string name="app_name">Lacoste Beacon</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="what_is_your_name_">What is your name?</string>
